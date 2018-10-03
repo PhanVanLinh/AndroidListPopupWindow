@@ -1,6 +1,5 @@
-package toong.vn.androidlistpopupwindow;
+package toong.vn.androidlistpopupwindow.listpopupwindow;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
-import toong.vn.androidlistpopupwindow.model.Item;
+import toong.vn.androidlistpopupwindow.R;
+import toong.vn.androidlistpopupwindow.listpopupwindow.model.ListPopupItem;
 
 /**
  * Created by PhanVanLinh on 13/09/2017.
@@ -16,22 +16,20 @@ import toong.vn.androidlistpopupwindow.model.Item;
  */
 
 public class ListPopupWindowAdapter extends BaseAdapter {
-    LayoutInflater mLayoutInflater;
-    List<Item> mItemList;
+    private List<ListPopupItem> items;
 
-    public ListPopupWindowAdapter(Context context, List<Item> itemList) {
-        mLayoutInflater = LayoutInflater.from(context);
-        mItemList = itemList;
+    public ListPopupWindowAdapter(List<ListPopupItem> items) {
+        this.items = items;
     }
 
     @Override
     public int getCount() {
-        return mItemList.size();
+        return items.size();
     }
 
     @Override
-    public Item getItem(int i) {
-        return mItemList.get(i);
+    public ListPopupItem getItem(int i) {
+        return items.get(i);
     }
 
     @Override
@@ -43,7 +41,7 @@ public class ListPopupWindowAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mLayoutInflater.inflate(R.layout.item, null);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_popup, null);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
@@ -52,7 +50,6 @@ public class ListPopupWindowAdapter extends BaseAdapter {
 
         holder.tvTitle.setText(getItem(position).getTitle());
         holder.ivImage.setImageResource(getItem(position).getImageRes());
-
         return convertView;
     }
 

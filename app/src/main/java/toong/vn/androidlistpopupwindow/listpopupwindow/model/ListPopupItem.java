@@ -1,15 +1,10 @@
-package toong.vn.androidlistpopupwindow.model;
+package toong.vn.androidlistpopupwindow.listpopupwindow.model;
 
-/**
- * Created by PhanVanLinh on 13/09/2017.
- * phanvanlinh.94vn@gmail.com
- */
-
-public class Item {
+public class ListPopupItem {
     private String title;
     private int imageRes;
 
-    public Item(String title, int imageRes) {
+    public ListPopupItem(String title, int imageRes) {
         this.title = title;
         this.imageRes = imageRes;
     }
@@ -24,9 +19,5 @@ public class Item {
 
     public int getImageRes() {
         return imageRes;
-    }
-
-    public void setImageRes(int imageRes) {
-        this.imageRes = imageRes;
     }
 }

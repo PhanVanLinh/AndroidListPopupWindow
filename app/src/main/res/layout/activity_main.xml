@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="toong.vn.androidlistpopupwindow.MainActivity"
+    tools:context="toong.vn.androidlistpopupwindow.screen.MainActivity"
     >
 
     <Button
-        android:id="@+id/button_show_list_popup"
+        android:id="@+id/button_show_list_popup_from_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show List Popup"
+        android:text="Show List Popup from Top"
         />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/button_show_list_popup_from_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show List Popup (from Bottom)"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        />
+
+</RelativeLayout>
